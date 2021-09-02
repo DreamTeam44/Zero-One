@@ -63,6 +63,8 @@ GEM
     acts_as_votable (0.13.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    backable (1.0.2)
+      rails (>= 3)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.3)
@@ -87,6 +89,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    ffi (1.15.0)
     ffi (1.15.0-x64-mingw32)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
@@ -113,6 +116,8 @@ GEM
     msgpack (1.4.2)
     nio4r (2.5.7)
     nokogiri (1.11.2-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (4.0.6)
@@ -161,11 +166,14 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rmagick (4.2.2)
     ruby-vips (2.1.0)
       ffi (~> 1.12)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -221,9 +229,11 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   acts_as_votable
+  backable
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
@@ -237,6 +247,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.0)
   ransack (~> 2.4)
+  rmagick
   sass-rails (>= 6)
   selenium-webdriver
   sqlite3 (~> 1.4)
@@ -251,4 +262,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.2.14
+   2.2.26

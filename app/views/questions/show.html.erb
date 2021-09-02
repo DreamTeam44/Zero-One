@@ -1,4 +1,4 @@
-<br/>  <br/>
+<p id="notice"><%= notice %></p>
 <div class="card" style="width: 79rem;">
   <div class="card-body">
     <%= image_tag @question.user.user_avatar, class: 'rounded-circle '%>
@@ -10,7 +10,9 @@
     <p class="card-text"><strong>المحتوى:<br/></strong>
       <%= @question.content %>
     </p>
+    <%if user_signed_in? && @question.user_id == current_user.id or current_user.try(:admin?)%>
     <%= link_to 'تعديل', edit_question_path(@question) %> |
+    <% end %>
     <%= link_to 'العودة', questions_path %>
    <p>كتبت بواسطة <%= @question.user.username %> </p>
 
@@ -42,9 +44,8 @@
 <div class="card-header bg-info">
   <h4 class="font-weight-bold">التعليقات</h4>
 </div>
-  <br/>
-  <h5>  عدد التعليقات: <%=@question.comments.count%>  </h5>
-  <div class="card-body">
+<div class="card-body">
 <%= render @question.comments %>
+</div>
 </div>
 </div>
